@@ -36,7 +36,7 @@
   * onStart() 
   * onResume()  
 
-<p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="500"></p>
+<p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="600"></p>
 
 #### What is the structure of an Android Application?
 
