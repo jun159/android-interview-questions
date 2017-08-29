@@ -54,34 +54,34 @@
 
 ### Activity lifecycle
 1. Starting state
-  * Before starting an activity, it is not in memory
+   * Before starting an activity, it is not in memory
 2. Running state
-  * Transition state from starting to running state is very computationally intensive and affects battery life
-  * Only one activity is on running state at a time
-  * When an activity is called, it will call three methods accordingly and automatically:
-    * onCreate() 
-    * onStart() 
-    * onResume() 
+   * Transition state from starting to running state is very computationally intensive and affects battery life
+   * Only one activity is on running state at a time
+   * When an activity is called, it will call three methods accordingly and automatically:
+     * onCreate() 
+     * onStart() 
+     * onResume() 
 3. Paused state
-  * When user is not interacting with screen but screen is still visible to user
-  * onPause() 
+   * When user is not interacting with screen but screen is still visible to user
+   * onPause() 
 4. Stop state
-  * When activity is not visible, but still in memory
-  * onStop() - Only after pausing, it will stop the activity
-4. We want to go back to our app
-  * onRestart() 
-  * onStart() 
-  * onResume()
-5. We want to go back to previous activity (close current app)
-  * onPause() 
-  * onStop() 
-  * onDestroy()
-6. Destroy 
-  * Activity is no longer in memory
-  * When app is killed, it needs to create the activity again (Same as step 2)
-  * onCreate() 
-  * onStart() 
-  * onResume()  
+   * When activity is not visible, but still in memory
+   * onStop() - Only after pausing, it will stop the activity
+5. We want to go back to our app
+   * onRestart() 
+   * onStart() 
+   * onResume()
+6. We want to go back to previous activity (close current app)
+   * onPause() 
+   * onStop() 
+   * onDestroy()
+7. Destroy 
+   * Activity is no longer in memory
+   * When app is killed, it needs to create the activity again (Same as step 2)
+   * onCreate() 
+   * onStart() 
+   * onResume()  
 
 <p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="600"></p>
 
