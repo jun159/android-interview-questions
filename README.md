@@ -3,6 +3,7 @@
 </p>
 
 ## Contents
+ * [Support](#support)
  * [Core Android](#core-android)
  * [Core Java](#core-java)
  * [Data Structures And Algorithms](#data-structures-and-algorithms)
@@ -10,7 +11,6 @@
  * [Design Problem](#design-problem)
  * [Tools And Technologies](#tools-and-technologies)
  * [Android Test Driven Development](#android-test-driven-development)
- * [Others](#others)
 
 ## Support
 
@@ -27,8 +27,13 @@
   * API: Connect App and Server
 * Convert object into JSON/XML and send to client
 
-### SOAP
+### Volley
+* Better quality, better caching and less coding than Volley
 
+### REST vs SOAP
+* SOAP has overhead - envelope and body wrapping actual data while REST only contains actual data
+* SOAP offers security for envelopes, while REST does not
+* SOAP data format is XML, REST data format is XML/JSON
 
 ### ButterKnife
 * Eliminate `findViewById` calls by using `@BindView` on field
@@ -37,21 +42,15 @@
 @BindView(R.id.pass) EditText password;
 @BindString(R.string.login_error) String loginErrorMessage;
 ```
-
-### About Build System - gradle, ant, buck
-
-### Describe SQLite
-
-### Describe database
-
-#### How do you build your apps for release?
+### About Build System - Gradle
+* Build systems are software tools designed to automate the process of program compilation
+* Turn all source code into APK file
+* Uses Groovy language to customize build system (e.g. compileSdkVersion, dependencies that contains libraries online - replace .aar or .jar file)
 
 #### What are the metrics that you should measure continuously while android application development? [Mindorks]
 (https://blog.mindorks.com/android-app-performance-metrics-a1176334186e)
 
 ## Core Android
-
-### Structure of an Android Application?
 
 ### Activity lifecycle
 1. Starting state
@@ -64,29 +63,29 @@
     * onStart() 
     * onResume() 
 3. Paused state
-  * 
-  * onPause() - Pause activity first
-  * onStop() - After pausing, it will stop the activity
+  * When user is not interacting with screen but screen is still visible to user
+  * onPause() 
 4. Stop state
-  * 
-4. Let's say we want to go back to our app
+  * When activity is not visible, but still in memory
+  * onStop() - Only after pausing, it will stop the activity
+4. We want to go back to our app
   * onRestart() 
   * onStart() 
   * onResume()
-5. Let's say we want to go back to previous activity (close current app)
-  * onPause() - Pause activity first
-  * onStop() - After pausing, it will stop the activity
-  * onDestroy() - Only when activity is stopped, destroy the activity
-6. When app is killed, it needs to create the activity again (Same as step 2)
+5. We want to go back to previous activity (close current app)
+  * onPause() 
+  * onStop() 
+  * onDestroy()
+6. Destroy 
+  * Activity is no longer in memory
+  * When app is killed, it needs to create the activity again (Same as step 2)
   * onCreate() 
   * onStart() 
   * onResume()  
 
 <p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="600"></p>
 
-
-
-#### Define all Android application components
+### Define all Android application components
 1. Activities
    * Represents a single screen with a user interface 
    * Handle the user interaction on phone screen
@@ -103,14 +102,14 @@
    * Supplies data from one application to others on request 
    * Data may be stored in the file system, the database or somewhere else entirely
 
-#### Service vs IntentService
+### Service vs IntentService
 1. Service
    * Can be used in tasks with no UI, but shouldn't be too long
    * If you need to perform long tasks, you must use threads within Service.
 2. IntentService
    * Can be used in long tasks usually with no communication to main thread
 
-#### How to persist data in an Android app?
+### How to persist data in an Android app?
 1. SharedPreferences
    * Store private primitive data in key-value pairs
 2. Internal Storage (File)
@@ -122,7 +121,7 @@
 5. Network Connection
    * Store data on the web with your own network server
 
-#### How would you perform a long-running operation in an application?
+### How would you perform a long-running operation in an application?
 * Background
    * Every Java program by default has main thread. Whenever there is error, this thread will throw exception and stop executing
    * Android applications has UI thread that is in charge of any UI related works (e.g. scrolling through list / clicking on button)
@@ -136,9 +135,40 @@
    * Main core of multitasking
    * Parent of both handler and asynctask 
    
-#### What is `Fragment`?
+### Relative Layout vs Linear Layout
+* LinearLayout: Lay out its children next to each other (horizontally or vertically)
+* RelativeLayout: Each element’s position is relative to other elements (i.e. Neighbours - top, bottom, left, right)
+* AbsoluteLayout: Each element’s position is specified by (x,y)
+* TableLayout: Displays elements in the form of table (rows and columns)
+* GridView: Arrange its children in 2D scrollable grid
+
+### Difference between `View.GONE` and `View.INVISIBLE`?
+* View.GONE: View is invisible, and it doesn't take any space for layout purposes
+* View.INVISIBLE: View is invisible, but it still takes up space for layout purposes
+
+### What is the difference between a fragment and an activity? 
+* Fragment is a part of an activity, which contributes its own UI to that activity. 
+* Fragment can be thought like a sub activity. Where as the complete screen with which user interacts is called as activity. 
+* An activity can contain multiple fragments. Fragments are mostly a sub part of an activity.
+* A fragment can be reused in multiple activities, so it acts like a reusable component in activities.
+* A fragment can't exist independently. It should be always part of an activity. Where as activity can exist with out any fragment in it.
+
+### What is the difference between Serializable and Parcelable? Which is the best approach in Android?
+* We cannot just pass objects to activities
+* Objects must be either implements Serializable or Parcelable interface 
+* Parcelable is faster than serializable interface
+* Parcelable interface takes more time for implemetation compared to serializable interface
+* Serializable interface is easier to implement
+* Serializable interface create a lot of temporary objects and cause quite a bit of garbage collection
+* Parcelable array can be pass via Intent in android
+
+### What is `AndroidManifest.xml`?
+* Specify permissions, intents, etc.
+* Contains essential information about your app to the Android system
+* Which the system must have before it can run any of the app's code
 
 #### How would you communicate between two `Fragments`?
+* Activity is the middleman
 
 #### Explain Android notification system?
 
@@ -155,10 +185,6 @@
 #### Can you create custom views? How?
 
 #### What are ViewGroups and how they are different from the Views?
-
-#### What is the difference between a fragment and an activity? Explain the relationship between the two.
-
-#### What is the difference between Serializable and Parcelable? Which is the best approach in Android?
 
 #### What are "launch modes"? [Mindorks](https://blog.mindorks.com/android-activity-launchmode-explained-cbc6cf996802)
 
@@ -190,8 +216,6 @@
 
 #### What is ANR? How can the ANR be prevented?
 
-#### What is `AndroidManifest.xml`?
-
 #### Describe how broadcasts and intents work to be able to pass messages around your app?
 
 #### How do you handle `Bitmaps` in Android as it takes too much memory?
@@ -212,11 +236,7 @@
 
 #### How would you preserve Activity state during a screen rotation? [StackOverflow](https://stackoverflow.com/questions/3915952/how-to-save-state-during-orientation-change-in-android-if-the-state-is-made-of-m)
 
-#### Relative Layout vs Linear Layout.
-
 #### How to implement XML namespaces?
-
-#### Difference between `View.GONE` and `View.INVISIBLE`?
 
 #### What is the difference between a regular bitmap and a nine-patch image?
 
