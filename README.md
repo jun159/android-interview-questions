@@ -2,14 +2,6 @@
 <img alt="AndroidInterviewQuestions" src="https://raw.githubusercontent.com/MindorksOpenSource/android-interview-questions/master/assets/android_interview_questions.png">
 </p>
 
-
-# Android Interview Questions
-[![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
-[![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
-> Android Interview Questions - Your Cheat Sheet For Android Interview
-
-## Prepared and maintained by [Amit Shekhar](https://github.com/amitshekhariitbhu) who is having experience of taking interviews of many Android developers and cracking interviews of top companies.
-
 ## Contents
  * [Data Structures And Algorithms](#data-structures-and-algorithms)
  * [Core Java](#core-java)
@@ -75,7 +67,7 @@
 * Push: Add item on top of stack
 * Pop: Remove item from top of stack
 
-        <table>
+     <table>
             <tr>
                 <th>Algorithm</th>
                 <th>Average</th>
@@ -126,6 +118,7 @@
 
 ### Binary Search Tree
 
+
 ## Sorting Algorithms 
 * Efficiency of algorithms measured in [Big O](http://bigocheatsheet.com/)
 * Good algorithms perform important actions in O(n log n), O(log n) or even O(1) time
@@ -149,7 +142,7 @@
 * Advantages: Simple and low space complexity - only two elements are compared at once and there is no need to allocate more memory
 * Disadvantages: Inefficient
 
-            <table>
+     <table>
                 <tr>
                     <th colspan="3" align="center">Time Complexity</th>
                     <th align="center">Space Complexity</th>
@@ -349,13 +342,17 @@
 * What are the metrics that you should measure continuously while android application development? [Mindorks](https://blog.mindorks.com/android-app-performance-metrics-a1176334186e)
 
 
-### Found this project useful :heart:
+## Found this project useful :heart:
 * Support by clicking the :star: button on the upper right of this page. :v:
 
 [Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
+## Credits
+[Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)(https://mindorks.com/open-source-projects)
+[Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)(https://mindorks.com/join-community)
+[Amit Shekhar](https://github.com/amitshekhariitbhu) 
 
-### License
+## License
 ```
    Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
 
@@ -372,5 +369,5 @@
    limitations under the License.
 ```
 
-### Contributing to Android Interview Questions
+## Contributing to Android Interview Questions
 Just make pull request. You are in!
