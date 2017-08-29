@@ -142,11 +142,17 @@
 * TableLayout: Displays elements in the form of table (rows and columns)
 * GridView: Arrange its children in 2D scrollable grid
 
+### Difference between `RecyclerView` and `ListView`? 
+* RecyclerView reuses same item types so that it doesn't recreate new item
+* RecyclerView prevents costly findViewById uses (cache it)
+* RecyclerView can dynamically change to list or grid view anytime, but previously we must use ListView for list or GridView for grids
+* RecyclerView.ItemDecoration allows adding of borders or dividers easily
+
 ### Difference between `View.GONE` and `View.INVISIBLE`?
 * View.GONE: View is invisible, and it doesn't take any space for layout purposes
 * View.INVISIBLE: View is invisible, but it still takes up space for layout purposes
 
-### What is the difference between a fragment and an activity? 
+### Difference between a fragment and an activity? 
 * Fragment is a part of an activity, which contributes its own UI to that activity. 
 * Fragment can be thought like a sub activity. Where as the complete screen with which user interacts is called as activity. 
 * An activity can contain multiple fragments. Fragments are mostly a sub part of an activity.
