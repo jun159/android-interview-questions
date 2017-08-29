@@ -8,8 +8,6 @@
 [![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
 > Android Interview Questions - Your Cheat Sheet For Android Interview
 
-## We will be adding answers to the more questions on our [Mindorks website](https://mindorks.com).
-
 ## Prepared and maintained by [Amit Shekhar](https://github.com/amitshekhariitbhu) who is having experience of taking interviews of many Android developers and cracking interviews of top companies.
 
 ## Contents
@@ -23,57 +21,59 @@
  * [Others](#others)
 
 
-### Data Structures And Algorithms
+## Data Structures
 
-> The level of questions asked on the topic of Data Structures And Algorithms totally depends on the company for which you are applying.
+### Array
+* Group of elements of the same data types
+* Each element is data
+* Stored continuously in memory
 
-* Array
-    - An Array consists of a group of elements of the same data type. It is stored continuously in memory and by using its' index, you can find the underlying data. Arrays can be one dimensional and multi-dimensional. One dimensional array is the simplest data structure, and also most commonly used. It is worth noting that in Java language multi-dimensional array are implemented as arrays of arrays. For example, `int[10][5]` is actually one array with its' cells pointing to ten 5-element arrays.    
+#### 1D array A[10] 
+* 1 array with 10 elements
 
-        | Algorithm | Average | Worst Case |
-        |:---------:|:-------:|:----------:|
-        | Space     | Θ(n)    | O(n)       |    
-        | Search    | Θ(n)    | O(n)       |
-        | Insert    | Θ(n)    | O(n)       |
-        | Delete    | Θ(n)    | O(n)       |
+#### 2D array A[10][5]
+* 1 array with cells pointing to 10 5-element arrays  
 
-* LinkedList
-    - A LinkedList, just like a tree and unlike an array, consists of a group of nodes which 
-    together represent a sequence. Each node contains data and a pointer. The data in a node can be 
-    anything, but the pointer is a reference to the next item in the LinkedList. A LinkedList 
-    contains both a head and a tail. The "Head" is the first item in the LinkedList, while the "Tail" is 
-    the last item. It is not a circular data structure, therefore the tail does not have its' 
-    pointer pointing at the Head - the pointer is just `null`. The run time complexity for each of 
-    the base methods are as follows:
+  | Algorithm | Average | Worst Case |
+  |:---------:|:-------:|:----------:|
+  | Space     | Θ(n)    | O(n)       |    
+  | Search    | Θ(n)    | O(n)       |
+  | Insert    | Θ(n)    | O(n)       |
+  | Delete    | Θ(n)    | O(n)       |
 
-        | Algorithm | Average | Worst Case |
-        |:---------:|:-------:|:----------:|
-        | Space     | Θ(n)    | O(n)       |
-        | Search    | Θ(n)    | O(n)       |
-        | Insert    | Θ(1)    | O(1)       |
-        | Delete    | Θ(1)    | O(1)       |
+### LinkedList
+* Group of nodes of the same data types
+* Head: First node
+* Tail: Last node
 
-* DoublyLinkedList
-   - A DoublyLinkedList is based on a LinkedList, but there is two pointers in each node, "previous" pointer holds reference to the previous node and "next" pointer holds reference to the next node. It also has a Head node, head node's next pointer references the first node in this DoublyLinkedList. The last node's "next" reference points to `null`, but if last node's next pointer points to the first node, such DoublyLinkedList is called "Circular DoublyLinkedList". This data structure is very convenient if you need to be able to traverse stored elements in both directions. 
-  
-       ![DoublyLinkedList](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png)
-            
-        | Algorithm | Average | Worst Case |
-        |:---------:|:-------:|:----------:|
-        | Space     | Θ(n)    | O(n)       |
-        | Search    | Θ(n)    | O(n)       |
-        | Insert    | Θ(1)    | O(1)       |
-        | Delete    | Θ(1)    | O(1)       |
-* Stack
-   - A Stack is a basic data structure with a "Last-in-First-out" (LIFO) semantics. This means that 
-    the last item that was added to the stack is the first item that comes out of the stack. A 
-    Stack is like a stack of books in that in order to get to the first book that was added in the stack 
-    (the bottom book), all of the books that were added after need to be removed first. Adding to a 
-    Stack is called "Push", removing from a stack is called "Pop", and getting the last item 
-    inserted into the stack without removing it is called "Top". The most common way to implement a
-     stack is by using a LinkedList, but there is also StackArray (implemented with an array) 
-     which does not replace null entries, and there is also a Vector implementation that does 
-     replace `null` entries. [Wikipedia](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#Performance_Analysis)
+#### LinkedList
+* Each node has data and pointer that points to the next node
+* Tail: Not pointing to anything `null`
+
+#### Circular LinkedList
+* Each node has data and pointer that points to the next node
+* Tail: Points to the Head
+
+#### Doubly LinkedList
+* Each node has data and two pointers that points to the previous and next node
+* Tail: Previous node pointing to previous node; Next node not pointing to anything `null`
+
+#### Circular Doubly LinkedList
+* Each node has data and two pointers that points to the previous and next node
+* Tail: Previous node pointing to previous node; Next node points to Head
+
+ | Algorithm | Average | Worst Case |
+ |:---------:|:-------:|:----------:|
+ | Space     | Θ(n)    | O(n)       |
+ | Search    | Θ(n)    | O(n)       |
+ | Insert    | Θ(1)    | O(1)       |
+ | Delete    | Θ(1)    | O(1)       |
+
+### Stack
+* Last-in-First-out (LIFO)
+* Implemented using LinkedList
+* Push: Add item on top of stack
+* Pop: Remove item from top of stack
         <table>
             <tr>
                 <th>Algorithm</th>
@@ -110,14 +110,32 @@
               <td>O(1)</td>
             </tr>
         </table>
-* Queue
-* PriorityQueue
-* Dynamic Programming
-* String Manipulation
-* Binary Tree [Wikipedia](https://en.wikipedia.org/wiki/Binary_tree?oldformat=true) 
-* Binary Search Tree
-* Sorting Algorithms [Wikipedia](https://en.wikipedia.org/wiki/Sorting_algorithm?oldformat=true)
-    - Using the most efficient sorting algorithm (and correct data structures that implement it) is vital for any program, because data manipulation can be one of the most significant bottlenecks in case of performance and the main purpose of spending time, determining the best algorithm for the job, is to drastically improve said performance. The efficiency of an algorithm is measured in its' "Big O" ([StackOverflow](https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation)) score. Really good algorithms perform important actions in O(n log n) or even O(log n) time and some of them can even perform certain actions in O(1) time (HashTable insertion, for example). But there is always a trade-off - if some algorithm is really good at adding a new element to a data structure, it is, most certainly, much worse at data access than some other algorithm. If you are proficient with math, you may notice that "Big O" notation has many similarities with "limits", and you would be right - it measures best, worst and average performances of an algorithm in question, by looking at its' function limit. It should be noted that, when we are speaking about O(1) - constant time - we are not saying that this algorithm performs an action in one operation, rather that it can perform this action with the same number of operations (roughly), regrardless of the amount of elements it has to take into account. Thankfully, a lot of "Big O" scores have been already calculated, so you don't have to guess, which algorithm or data structure will perform better in your project. ["Big O" cheat sheet](http://bigocheatsheet.com/)
+        
+### Queue
+### PriorityQueue
+### Hash Table
+### Dynamic Programming
+### String Manipulation
+### Binary Tree 
+### Binary Search Tree
+
+## Sorting Algorithms 
+* Efficiency of algorithms measured in [Big O](http://bigocheatsheet.com/)
+* Good algorithms perform important actions in O(n log n), O(log n) or even O(1) time
+
+  | Algorithm | Data Structure  | Time Complexity | | |
+  | :------------: | :---------------: | :-----: | :-----: | :-----: |
+  | | | Best | Average | Worst
+  | Quicksort | Array | O(n log(n)) | O(n log(n)) | O(n^2)
+  | Mergesort |Array | O(n log(n)) | O(n log(n))	 | O(n log(n))
+  | Heapsort | Array | O(n log(n))	 | O(n log(n))	 | O(n log(n))
+  | Bubble Sort | Array |	O(n)	 | O(n^2) | O(n^2)
+  | Insertion Sort | Array | O(n) | O(n^2) | O(n^2)
+  | Select Sort | Array | O(n^2) | O(n^2) | O(n^2)
+  | Bucket Sort | Array |	O(n+k) |	O(n+k) | O(n^2)
+  | Radix Sort | Array | O(nk) | O(nk) | O(nk)
+
+### Bubble Sort
     - Bubble sort [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort?oldformat=true) 
         - Bubble sort is one of the simplest sorting algorithms. It just compares neighbouring elements and if the one that precedes the other is smaller - it changes their places. So over one iteration over the data list, it is guaranteed that **at least** one element will be in its' correct place (the biggest/smallest one - depending on the direction of sorting). This is not a very efficient algorithm, as highly unordered arrays will require a lot of reordering (upto O(n^2)), but one of the advantages of this algorithm is its' space complexity - only two elements are compared at once and there is no need to allocate more memory, than those two will occupy. 
             <table>
