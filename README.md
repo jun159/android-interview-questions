@@ -188,7 +188,29 @@
 
 ### Core Android
 
-#### Explain Activity and Fragment lifecycle. (Complete diagram [GitHub](https://github.com/xxv/android-lifecycle), simplified diagram for [Activity](https://developer.android.com/guide/components/activities/activity-lifecycle.html#alc), [Fragment](https://developer.android.com/guide/components/fragments.html#Lifecycle))
+#### Explain Activity and Fragment lifecycle
+1. Before starting an activity, it is not in RAM
+2. When an activity is called, it will call three methods accordingly and automatically:
+  a. onCreate() 
+  b. onStart() 
+  c. onResume() 
+3. Let's say we press home button, so current app will be minimized. (Note that current app is not closed!)
+  a. onPause() - Pause activity first
+  b. onStop() - After pausing, it will stop the activity
+4. Let's say we want to go back to our app
+  a. onRestart() 
+  b. onStart() 
+  c. onResume()
+5. Let's say we want to go back to previous activity (close current app)
+  a. onPause() - Pause activity first
+  b. onStop() - After pausing, it will stop the activity
+  c. onDestroy() - Only when activity is stopped, destroy the activity
+6. When app is killed, it needs to create the activity again (Same as step 2)
+  a. onCreate() 
+  b. onStart() 
+  c. onResume()  
+
+<p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="250"></p>
 
 #### What is the structure of an Android Application?
 
