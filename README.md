@@ -12,17 +12,63 @@
  * [Android Test Driven Development](#android-test-driven-development)
  * [Others](#others)
 
+## Support
+
+### REST APIs
+* Background:
+  * Web services: Accessing cloud/server that gives you data
+  * Request: App --Request for data--> Server
+    * Post - Create
+    * Get - Read
+    * Put - Update
+    * Delete - Delete
+  * Response: Server --Respond by giving data in XML/JSON--> App
+    * Why XML/JSON format? Data should follow particular structure
+  * API: Connect App and Server
+* Convert object into JSON/XML and send to client
+
+### SOAP
+
+
+### ButterKnife
+* Eliminate `findViewById` calls by using `@BindView` on field
+```
+@BindView(R.id.user) EditText username;
+@BindView(R.id.pass) EditText password;
+@BindString(R.string.login_error) String loginErrorMessage;
+```
+
+### About Build System - gradle, ant, buck
+
+### Describe SQLite
+
+### Describe database
+
+#### How do you build your apps for release?
+
+#### What are the metrics that you should measure continuously while android application development? [Mindorks]
+(https://blog.mindorks.com/android-app-performance-metrics-a1176334186e)
+
 ## Core Android
 
-### Explain Activity and Fragment lifecycle
-1. Before starting an activity, it is not in RAM
-2. When an activity is called, it will call three methods accordingly and automatically:
-  * onCreate() 
-  * onStart() 
-  * onResume() 
-3. Let's say we press home button, so current app will be minimized. (Note that current app is not closed!)
+### Structure of an Android Application?
+
+### Activity lifecycle
+1. Starting state
+  * Before starting an activity, it is not in memory
+2. Running state
+  * Transition state from starting to running state is very computationally intensive and affects battery life
+  * Only one activity is on running state at a time
+  * When an activity is called, it will call three methods accordingly and automatically:
+    * onCreate() 
+    * onStart() 
+    * onResume() 
+3. Paused state
+  * 
   * onPause() - Pause activity first
   * onStop() - After pausing, it will stop the activity
+4. Stop state
+  * 
 4. Let's say we want to go back to our app
   * onRestart() 
   * onStart() 
@@ -38,7 +84,7 @@
 
 <p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="600"></p>
 
-#### What is the structure of an Android Application?
+
 
 #### Define all Android application components
 1. Activities
@@ -62,14 +108,12 @@
    * Can be used in tasks with no UI, but shouldn't be too long
    * If you need to perform long tasks, you must use threads within Service.
 2. IntentService
-   * Can be used in long tasks usually with no communication to Main Thread
-   * If communication is required, can use Main Thread handler or broadcast intents
-   * Another case of use is when callbacks are needed (Intent triggered tasks)
+   * Can be used in long tasks usually with no communication to main thread
 
 #### How to persist data in an Android app?
 1. SharedPreferences
    * Store private primitive data in key-value pairs
-2. Internal Storage
+2. Internal Storage (File)
    * Store private data on the device memory
 3. External Storage
    * Store public data on the shared external storage
@@ -94,7 +138,7 @@
    
 #### What is `Fragment`?
 
-#### How would you communicate between two Fragments?
+#### How would you communicate between two `Fragments`?
 
 #### Explain Android notification system?
 
@@ -413,115 +457,6 @@
 ### Quick Sort
 
 ### Hash Table / Hash Map
-
-
-## Pathfinding Algorithms
-        
-### Dijkstra Algorithm
-
-### Bellmanford Algorithm
-
-### Breadth First Search
-
-### Depth First Search
-
-## Greedy Algorithm
-
-### Core Java
-
-### Architecture
-
-* Describe the architecture of your last app.
-* Describe MVP. [Mindorks](https://blog.mindorks.com/essential-guide-for-designing-your-android-app-architecture-mvp-part-1-74efaf1cda40)
-* What is presenter?
-* What is model?
-* Describe MVC.
-* What is controller?
-* Describe MVVM. [GitHub](https://github.com/MindorksOpenSource/android-mvvm-architecture)
-* Tell something about clean code [Mindorks](https://blog.mindorks.com/every-programmer-should-read-this-book-6755dedec78d)
-
-
-### Design Problem
-
-* Design Uber App.
-* Design Facebook App.
-* Design Facebook Near-By Friends App.
-* Design WhatsApp.
-* Design SnapChat.
-* Design problems based on location based app.
-
-
-### Tools And Technologies
-
-* Git. [GitHub](https://github.com/git-tips/tips)
-* RxJava. [Mindorks](https://blog.mindorks.com/a-complete-guide-to-learn-rxjava-b55c0cea3631)
-* Dagger 2. [Medium](https://medium.com/p/a-complete-guide-to-learn-dagger-2-b4c7a570d99c)
-* Android Development Useful Tools. [Mindorks](https://blog.mindorks.com/android-development-useful-tools-fd73283e82e3)
-* Firebase. [Firebase.google.com](https://firebase.google.com/)
-
-
-### Android Test Driven Development
-
-* What is Espresso? [Developer Android](https://developer.android.com/training/testing/ui-testing/espresso-testing.html)
-* What is Robolectric? [Robolectric](http://robolectric.org/)
-* What is UI-Automator? [Developer Android](https://developer.android.com/training/testing/ui-testing/uiautomator-testing.html)
-* Explain unit test.
-* Explain instrumented test.
-* Have you done unit testing or automatic testing?
-* Why Mockito is used? [Official site](http://site.mockito.org/)
-* Describe JUnit test.
-
-
-### Others
-
-#### REST APIs
-* Background:
-  * Web services: Accessing cloud/server that gives you data
-  * Request: App --Request for data--> Server
-    * Post - Create
-    * Get - Read
-    * Put - Update
-    * Delete - Delete
-  * Response: Server --Respond by giving data in XML/JSON--> App
-    * Why XML/JSON format? Data should follow particular structure
-  * API: Connect App and Server
-* Convert object into JSON/XML and send to client
-
-#### SOAP
-
-#### Retrofit
-
-#### ButterKnife
-
-#### About Build System - gradle, ant, buck
-
-#### Describe SQLite
-
-#### Describe database
-
-#### Reverse Engineering an APK
-
-#### What is proguard used for?
-
-#### What is obfuscation? What is it used for? What about minification?
-
-#### How do you build your apps for release?
-
-#### How do you control the application version update to specific number of users?
-
-#### Can we identify users who have uninstalled our application?
-
-#### APK Size Reduction. [Mindorks](https://blog.mindorks.com/how-to-reduce-apk-size-in-android-2f3713d2d662)
-
-#### Android Development Best Practices. [Mindorks](https://blog.mindorks.com/android-development-best-practices-83c94b027fd3)
-
-#### Android Code Style And Guidelines. [Mindorks](https://blog.mindorks.com/android-code-style-and-guidelines-d5f80453d5c7)
-
-#### Have you tried Kotlin? [Medium](https://medium.com/p/why-you-must-try-kotlin-for-android-development-e14d00c8084b)
-
-#### What are the metrics that you should measure continuously while android application development? [Mindorks]
-(https://blog.mindorks.com/android-app-performance-metrics-a1176334186e)
-
 
 ## Found this project useful :heart:
 * Support by clicking the :star: button on the upper right of this page. :v:
