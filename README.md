@@ -62,12 +62,12 @@
 * Each node has data and two pointers that points to the previous and next node
 * Tail: Previous node pointing to previous node; Next node points to Head
 
- | Algorithm | Average | Worst Case |
- |:---------:|:-------:|:----------:|
- | Space     | Θ(n)    | O(n)       |
- | Search    | Θ(n)    | O(n)       |
- | Insert    | Θ(1)    | O(1)       |
- | Delete    | Θ(1)    | O(1)       |
+  | Algorithm | Average | Worst Case |
+  |:---------:|:-------:|:----------:|
+  | Space     | Θ(n)    | O(n)       |
+  | Search    | Θ(n)    | O(n)       |
+  | Insert    | Θ(1)    | O(1)       |
+  | Delete    | Θ(1)    | O(1)       |
 
 ### Stack
 * Last-in-First-out (LIFO)
@@ -112,16 +112,24 @@
         </table>
         
 ### Queue
+
 ### PriorityQueue
+
 ### Hash Table
+
 ### Dynamic Programming
+
 ### String Manipulation
+
 ### Binary Tree 
+
 ### Binary Search Tree
 
 ## Sorting Algorithms 
 * Efficiency of algorithms measured in [Big O](http://bigocheatsheet.com/)
 * Good algorithms perform important actions in O(n log n), O(log n) or even O(1) time
+* Time complexity: Time taken to complete algorithm
+* Space complexity: Space taken to complete algorithm (i.e. do we need extra memory space other than current space to do sorting?)
 
   | Algorithm | Data Structure  | Time Complexity | | |
   | :------------: | :---------------: | :-----: | :-----: | :-----: |
@@ -136,8 +144,14 @@
   | Radix Sort | Array | O(nk) | O(nk) | O(nk)
 
 ### Bubble Sort
-    - Bubble sort [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort?oldformat=true) 
-        - Bubble sort is one of the simplest sorting algorithms. It just compares neighbouring elements and if the one that precedes the other is smaller - it changes their places. So over one iteration over the data list, it is guaranteed that **at least** one element will be in its' correct place (the biggest/smallest one - depending on the direction of sorting). This is not a very efficient algorithm, as highly unordered arrays will require a lot of reordering (upto O(n^2)), but one of the advantages of this algorithm is its' space complexity - only two elements are compared at once and there is no need to allocate more memory, than those two will occupy. 
+* Compares neighbouring elements and swap with each other if a > b
+
+##### Advantages
+* Simple 
+* L ow space complexity - only two elements are compared at once and there is no need to allocate more memory
+
+#### Disadvantages
+* Inefficient
             <table>
                 <tr>
                     <th colspan="3" align="center">Time Complexity</th>
@@ -156,6 +170,7 @@
                     <td align="center">O(1)</td>
                 </tr>
             </table>
+            
     - Selection sort [Wikipedia](https://www.wikiwand.com/en/Selection_sort) 
         - Firstly, selection sort assumes that the first element of the array to be sorted is the smallest, but to confirm this, it iterates over all other elements to check, and if it finds one, it gets defined as the smallest one. When the data ends, the element, that is currently found to be the smallest, is put in the beginning of the array. This sorting algorithm is quite straightforward, but still not that efficient on larger data sets, because to assign just one element to its' place, it needs to go over all data.
             <table>
