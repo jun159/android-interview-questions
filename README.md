@@ -3,220 +3,46 @@
 </p>
 
 ## Contents
- * [Data Structures And Algorithms](#data-structures-and-algorithms)
- * [Core Java](#core-java)
  * [Core Android](#core-android)
+ * [Core Java](#core-java)
+ * [Data Structures And Algorithms](#data-structures-and-algorithms)
  * [Architecture](#architecture)
  * [Design Problem](#design-problem)
  * [Tools And Technologies](#tools-and-technologies)
  * [Android Test Driven Development](#android-test-driven-development)
  * [Others](#others)
 
+## Core Android
 
-## Data Structures
-
-### Array
-* Group of elements of the same data types
-* Each element is data
-* Stored continuously in memory
-
-#### 1D array A[10] 
-* 1 array with 10 elements
-
-#### 2D array A[10][5]
-* 1 array with cells pointing to 10 5-element arrays  
-
-  | Algorithm | Average | Worst Case |
-  |:---------:|:-------:|:----------:|
-  | Space     | Θ(n)    | O(n)       |    
-  | Search    | Θ(n)    | O(n)       |
-  | Insert    | Θ(n)    | O(n)       |
-  | Delete    | Θ(n)    | O(n)       |
-
-### LinkedList
-* Group of nodes of the same data types
-* Head: First node
-* Tail: Last node
-
-#### LinkedList
-* Each node has data and pointer that points to the next node
-* Tail: Not pointing to anything `null`
-
-#### Circular LinkedList
-* Each node has data and pointer that points to the next node
-* Tail: Points to the Head
-
-#### Doubly LinkedList
-* Each node has data and two pointers that points to the previous and next node
-* Tail: Previous node pointing to previous node; Next node not pointing to anything `null`
-
-#### Circular Doubly LinkedList
-* Each node has data and two pointers that points to the previous and next node
-* Tail: Previous node pointing to previous node; Next node points to Head
-
-  | Algorithm | Average | Worst Case |
-  |:---------:|:-------:|:----------:|
-  | Space     | Θ(n)    | O(n)       |
-  | Search    | Θ(n)    | O(n)       |
-  | Insert    | Θ(1)    | O(1)       |
-  | Delete    | Θ(1)    | O(1)       |
-
-### Stack
-* Last-in-First-out (LIFO)
-* Implemented using LinkedList
-* Push: Add item on top of stack
-* Pop: Remove item from top of stack
-
-     <table>
-            <tr>
-                <th>Algorithm</th>
-                <th>Average</th>
-                <th>Worst Case</th>
-                <th>Image representation</th>
-            </tr>
-            <tr>
-                <td>Space</td>
-                <td>Θ(n)</td>
-                <td>O(n)</td>
-                <td rowspan="5">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/250px-Data_stack.svg.png"/>
-                </td>
-            </tr>
-            <tr>
-                <td>Search</td>
-                <td>Θ(n)</td>
-                <td>O(n)</td>
-            </tr>
-            <tr>
-                <td>Insert (Push)</td>
-                <td>Θ(1)</td>
-                <td>O(1)</td>
-            </tr>
-            <tr>
-                <td>Delete (Pop)</td>
-                <td>Θ(1)</td>
-                <td>O(1)</td>
-            </tr>
-            <tr>
-              <td>Top</td>
-              <td>Θ(1)</td>
-              <td>O(1)</td>
-            </tr>
-        </table>
-        
-### Queue
-
-### PriorityQueue
-
-### Hash Table
-
-### Dynamic Programming
-
-### String Manipulation
-
-### Binary Tree 
-
-### Binary Search Tree
-
-
-## Sorting Algorithms 
-* Efficiency of algorithms measured in [Big O](http://bigocheatsheet.com/)
-* Good algorithms perform important actions in O(n log n), O(log n) or even O(1) time
-* Time complexity: Time taken to complete algorithm
-* Space complexity: Space taken to complete algorithm (i.e. do we need extra memory space other than current space to do sorting?)
-
-  | Algorithm | Data Structure  | Time Complexity | | |
-  | :------------: | :---------------: | :-----: | :-----: | :-----: |
-  | | | Best | Average | Worst
-  | Quicksort | Array | O(n log(n)) | O(n log(n)) | O(n^2)
-  | Mergesort |Array | O(n log(n)) | O(n log(n))	 | O(n log(n))
-  | Heapsort | Array | O(n log(n))	 | O(n log(n))	 | O(n log(n))
-  | Bubble Sort | Array |	O(n)	 | O(n^2) | O(n^2)
-  | Insertion Sort | Array | O(n) | O(n^2) | O(n^2)
-  | Select Sort | Array | O(n^2) | O(n^2) | O(n^2)
-  | Bucket Sort | Array |	O(n+k) |	O(n+k) | O(n^2)
-  | Radix Sort | Array | O(nk) | O(nk) | O(nk)
-
-### Bubble Sort
-* Compares neighbouring elements and swap with each other if a > b
-* Advantages: Simple and low space complexity - only two elements are compared at once and there is no need to allocate more memory
-* Disadvantages: Inefficient
-
-     <table>
-                <tr>
-                    <th colspan="3" align="center">Time Complexity</th>
-                    <th align="center">Space Complexity</th>
-                </tr>
-                <tr>
-                    <th align="center">Best</th>
-                    <th align="center">Avegage</th>
-                    <th align="center">Worst</th>
-                    <th align="center">Worst</th>
-                </tr>
-                <tr>
-                    <td align="center">Ω(n)</td>
-                    <td align="center">Θ(n^2)</td>
-                    <td align="center">O(n^2)</td>
-                    <td align="center">O(1)</td>
-                </tr>
-            </table>
-       
-### Selection Sort
-
-### Insertion Sort
-
-### Merge Sort
-
-### Quick Sort
-
-### Hash Table / Hash Map
-
-
-## Pathfinding Algorithms
-        
-### Dijkstra Algorithm
-
-### Bellmanford Algorithm
-
-### Breadth First Search
-
-### Depth First Search
-
-## Greedy Algorithm
-
-### Core Java
-
-### Core Android
-
-#### Explain Activity and Fragment lifecycle
+### Explain Activity and Fragment lifecycle
 1. Before starting an activity, it is not in RAM
 2. When an activity is called, it will call three methods accordingly and automatically:
-  a. onCreate() 
-  b. onStart() 
-  c. onResume() 
+  * onCreate() 
+  * onStart() 
+  * onResume() 
 3. Let's say we press home button, so current app will be minimized. (Note that current app is not closed!)
-  a. onPause() - Pause activity first
-  b. onStop() - After pausing, it will stop the activity
+  * onPause() - Pause activity first
+  * onStop() - After pausing, it will stop the activity
 4. Let's say we want to go back to our app
-  a. onRestart() 
-  b. onStart() 
-  c. onResume()
+  * onRestart() 
+  * onStart() 
+  * onResume()
 5. Let's say we want to go back to previous activity (close current app)
-  a. onPause() - Pause activity first
-  b. onStop() - After pausing, it will stop the activity
-  c. onDestroy() - Only when activity is stopped, destroy the activity
+  * onPause() - Pause activity first
+  * onStop() - After pausing, it will stop the activity
+  * onDestroy() - Only when activity is stopped, destroy the activity
 6. When app is killed, it needs to create the activity again (Same as step 2)
-  a. onCreate() 
-  b. onStart() 
-  c. onResume()  
+  * onCreate() 
+  * onStart() 
+  * onResume()  
 
-<p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="250"></p>
+<p align="center"><img src="https://github.com/jun159/android-interview-questions/blob/master/assets/activity_lifecycle.png" height ="500"></p>
 
 #### What is the structure of an Android Application?
 
 #### Define all Android application components
 1. Activities
-   *  Represents a single screen with a user interface 
+   * Represents a single screen with a user interface 
    * Handle the user interaction on phone screen
 2. Services
    * Runs in the background to perform long-running operations 
@@ -430,6 +256,178 @@
 
 #### How to handle multi-touch in android [GitHub](https://arjun-sna.github.io/android/2016/07/20/multi-touch-android/)
 
+## Data Structures
+
+### Array
+* Group of elements of the same data types
+* Each element is data
+* Stored continuously in memory
+
+#### 1D array A[10] 
+* 1 array with 10 elements
+
+#### 2D array A[10][5]
+* 1 array with cells pointing to 10 5-element arrays  
+
+  | Algorithm | Average | Worst Case |
+  |:---------:|:-------:|:----------:|
+  | Space     | Θ(n)    | O(n)       |    
+  | Search    | Θ(n)    | O(n)       |
+  | Insert    | Θ(n)    | O(n)       |
+  | Delete    | Θ(n)    | O(n)       |
+
+### LinkedList
+* Group of nodes of the same data types
+* Head: First node
+* Tail: Last node
+
+#### LinkedList
+* Each node has data and pointer that points to the next node
+* Tail: Not pointing to anything `null`
+
+#### Circular LinkedList
+* Each node has data and pointer that points to the next node
+* Tail: Points to the Head
+
+#### Doubly LinkedList
+* Each node has data and two pointers that points to the previous and next node
+* Tail: Previous node pointing to previous node; Next node not pointing to anything `null`
+
+#### Circular Doubly LinkedList
+* Each node has data and two pointers that points to the previous and next node
+* Tail: Previous node pointing to previous node; Next node points to Head
+
+  | Algorithm | Average | Worst Case |
+  |:---------:|:-------:|:----------:|
+  | Space     | Θ(n)    | O(n)       |
+  | Search    | Θ(n)    | O(n)       |
+  | Insert    | Θ(1)    | O(1)       |
+  | Delete    | Θ(1)    | O(1)       |
+
+### Stack
+* Last-in-First-out (LIFO)
+* Implemented using LinkedList
+* Push: Add item on top of stack
+* Pop: Remove item from top of stack
+
+     <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Average</th>
+                <th>Worst Case</th>
+                <th>Image representation</th>
+            </tr>
+            <tr>
+                <td>Space</td>
+                <td>Θ(n)</td>
+                <td>O(n)</td>
+                <td rowspan="5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/250px-Data_stack.svg.png"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Search</td>
+                <td>Θ(n)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Insert (Push)</td>
+                <td>Θ(1)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Delete (Pop)</td>
+                <td>Θ(1)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Top</td>
+              <td>Θ(1)</td>
+              <td>O(1)</td>
+            </tr>
+        </table>
+        
+### Queue
+
+### PriorityQueue
+
+### Hash Table
+
+### Dynamic Programming
+
+### String Manipulation
+
+### Binary Tree 
+
+### Binary Search Tree
+
+
+## Sorting Algorithms 
+* Efficiency of algorithms measured in [Big O](http://bigocheatsheet.com/)
+* Good algorithms perform important actions in O(n log n), O(log n) or even O(1) time
+* Time complexity: Time taken to complete algorithm
+* Space complexity: Space taken to complete algorithm (i.e. do we need extra memory space other than current space to do sorting?)
+
+  | Algorithm | Data Structure  | Time Complexity | | |
+  | :------------: | :---------------: | :-----: | :-----: | :-----: |
+  | | | Best | Average | Worst
+  | Quicksort | Array | O(n log(n)) | O(n log(n)) | O(n^2)
+  | Mergesort |Array | O(n log(n)) | O(n log(n))	 | O(n log(n))
+  | Heapsort | Array | O(n log(n))	 | O(n log(n))	 | O(n log(n))
+  | Bubble Sort | Array |	O(n)	 | O(n^2) | O(n^2)
+  | Insertion Sort | Array | O(n) | O(n^2) | O(n^2)
+  | Select Sort | Array | O(n^2) | O(n^2) | O(n^2)
+  | Bucket Sort | Array |	O(n+k) |	O(n+k) | O(n^2)
+  | Radix Sort | Array | O(nk) | O(nk) | O(nk)
+
+### Bubble Sort
+* Compares neighbouring elements and swap with each other if a > b
+* Advantages: Simple and low space complexity - only two elements are compared at once and there is no need to allocate more memory
+* Disadvantages: Inefficient
+
+     <table>
+                <tr>
+                    <th colspan="3" align="center">Time Complexity</th>
+                    <th align="center">Space Complexity</th>
+                </tr>
+                <tr>
+                    <th align="center">Best</th>
+                    <th align="center">Avegage</th>
+                    <th align="center">Worst</th>
+                    <th align="center">Worst</th>
+                </tr>
+                <tr>
+                    <td align="center">Ω(n)</td>
+                    <td align="center">Θ(n^2)</td>
+                    <td align="center">O(n^2)</td>
+                    <td align="center">O(1)</td>
+                </tr>
+            </table>
+       
+### Selection Sort
+
+### Insertion Sort
+
+### Merge Sort
+
+### Quick Sort
+
+### Hash Table / Hash Map
+
+
+## Pathfinding Algorithms
+        
+### Dijkstra Algorithm
+
+### Bellmanford Algorithm
+
+### Breadth First Search
+
+### Depth First Search
+
+## Greedy Algorithm
+
+### Core Java
 
 ### Architecture
 
