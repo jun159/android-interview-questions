@@ -130,10 +130,14 @@
    * Instead, we create another thread to request for data instead of UI thread so that our UI is still responsive
 2. Handler
    * Do background computation
-   * Not concerned with UI
+   * Execute multiple tasks
 3. Thread
    * Main core of multitasking
    * Parent of both handler and asynctask 
+   
+### AsyncTask vs Handler
+* AsyncTask: Doing something isolated related to UI, for example downloading data to present in a list
+* Handler: Doing multiple repeated tasks, for example downloading multiple images which are to be displayed in ImageViews (like downloading thumbnails) upon download, use a task queue with Handler.
    
 ### Relative Layout vs Linear Layout
 * LinearLayout: Lay out its children next to each other (horizontally or vertically)
